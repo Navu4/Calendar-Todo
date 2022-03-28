@@ -150,6 +150,7 @@ const Home = (props: Props) => {
       <div className="home-container">
         {isModalOpen ? (
           <AddTaskModal
+            currentDay={currentDate.currentDay}
             handleCloseModal={handleCloseModal}
             handleAddTask={handleAddTask}
             data={isEdit.data}

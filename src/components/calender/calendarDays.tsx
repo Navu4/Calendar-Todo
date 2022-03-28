@@ -11,19 +11,19 @@ const CalendarDays = (props: {
   changeCurrentDay: (day: any) => void;
   editTask: (data: { id: string; title: string; date: Date }) => void;
 }) => {
-  console.log(props.day);
-
   const firstDayOfMonth = new Date(
     props.day.getFullYear(),
     props.day.getMonth(),
     1
   );
+
   const weekdayOfFirstDay = firstDayOfMonth.getDay();
   let currentDays: CalendarDayType[] = [];
 
   for (let day = 0; day < 42; day++) {
     if (day === 0 && weekdayOfFirstDay === 0) {
       firstDayOfMonth.setDate(firstDayOfMonth.getDate() - 7);
+      console.log(firstDayOfMonth);
     } else if (day === 0) {
       firstDayOfMonth.setDate(
         firstDayOfMonth.getDate() + (day - weekdayOfFirstDay)

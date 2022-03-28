@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./modal.css";
 
 type AddTaskModalProps = {
+  currentDay: Date;
   data: {
     id: string;
     title: string;
@@ -13,6 +14,7 @@ type AddTaskModalProps = {
 };
 
 const AddTaskModal: FC<AddTaskModalProps> = ({
+  currentDay,
   data,
   handleAddTask,
   handleCloseModal,
@@ -44,7 +46,8 @@ const AddTaskModal: FC<AddTaskModalProps> = ({
   };
 
   const isValidDate =
-    new Date(inputVal.date) >= new Date() && inputVal.title.trim().length > 0
+    new Date(new Date(inputVal.date).toDateString()) >=
+    new Date(new Date().toDateString())
       ? true
       : false;
 
@@ -58,6 +61,15 @@ const AddTaskModal: FC<AddTaskModalProps> = ({
         };
       });
     }
+
+    if (currentDay !== null || currentDay !== undefined)
+      setInputVal((prev) => {
+        return {
+          ...prev,
+          date: currentDay.toLocaleDateString("en-CA"),
+        };
+      });
+
     return () => {
       setInputVal({
         id: "",
@@ -84,6 +96,11 @@ const AddTaskModal: FC<AddTaskModalProps> = ({
           value={inputVal.title}
           onChange={(e) => handleKeyChange("title", e)}
         />
+        {inputVal.title.trim().length == 0 ? (
+          <div className="not-valid-date">Please Select a Valid Title</div>
+        ) : (
+          <></>
+        )}
 
         <input
           type={"date"}

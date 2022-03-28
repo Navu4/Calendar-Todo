@@ -1,0 +1,83 @@
+.taskList-container {
+  min-width: 350px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(65, 61, 61, 0.198);
+}
+
+.list-header {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  font-size: 1.2rem;
+  color: rgba(32, 6, 6, 0.74);
+}
+
+.list-container {
+  overflow: auto;
+  flex: 1;
+}
+
+.taskcard-container {
+  width: 100%;
+  height: fit-content;
+  margin: 5px 0;
+
+  display: flex;
+  background: rgb(243, 243, 243);
+}
+
+.task-details {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.task-date {
+  font-size: 1.2rem;
+  color: rgb(128, 119, 119);
+}
+
+.task-title {
+  font-size: 1.2rem;
+}
+
+.remove-container {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.delete-task {
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 100%;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: rgba(251, 0, 0, 0.712);
+}
+
+@media (max-width: 700px) {
+  .taskList-container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: rgba(65, 61, 61, 0.198);
+  }
+
+  .taskcard-container {
+    width: 100%;
+  }
+}

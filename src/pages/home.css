@@ -1,0 +1,18 @@
+.home-container {
+  width: 100%;
+  height: 100%;
+}
+
+.calender-taskList-container {
+  display: flex;
+  width: 100%;
+
+  height: calc(100vh - 60px);
+}
+
+@media (max-width: 700px) {
+  .calender-taskList-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

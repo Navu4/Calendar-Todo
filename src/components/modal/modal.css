@@ -1,0 +1,85 @@
+.modal-container {
+  height: 100vh;
+  width: 100vw;
+
+  position: absolute;
+
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.329);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  width: 30rem;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-container > input {
+  margin: 10px 0;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+
+  border-radius: 0.2rem;
+
+  border: none;
+  outline: none;
+
+  background-color: rgba(211, 211, 211, 0.801);
+}
+
+.cancel-modal {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  background-color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.action-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.done-btn {
+  outline: none;
+  border: none;
+
+  height: 2rem;
+  width: fit-content;
+  margin-top: 10px;
+
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: white;
+  background-color: rgb(100, 92, 92);
+}
+
+.not-valid-date {
+  color: rgba(255, 0, 0, 0.931);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.done-btn:disabled {
+  cursor: not-allowed;
+}
